@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>とけいマスター！</title>
+  <title>とけいマスター！ 完全版</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800;900&display=swap" rel="stylesheet">
@@ -96,43 +96,48 @@
           </div>
         </div>
 
-        <!-- 右メイン: レベル & ステージ -->
+        <!-- 右メイン: レベル & 全5ステージ一覧 -->
         <div class="md:col-span-8 flex flex-col gap-4">
           <div class="grid grid-cols-3 gap-2">
-            <button id="levelTab1" onclick="selectLevel(1)" class="btn-3d bg-amber-400 text-white font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#d97706] text-xs sm:text-sm">★ レベル①<br><span class="text-[10px] opacity-90">ぴったり・はん</span></button>
-            <button id="levelTab2" onclick="selectLevel(2)" class="btn-3d bg-white border-2 border-slate-300 text-slate-600 font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#cbd5e1] text-xs sm:text-sm">★★ レベル②<br><span class="text-[10px] opacity-90">5ふん・15ふん</span></button>
-            <button id="levelTab3" onclick="selectLevel(3)" class="btn-3d bg-white border-2 border-slate-300 text-slate-600 font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#cbd5e1] text-xs sm:text-sm">★★★ レベル③<br><span class="text-[10px] opacity-90">1ふん きざみ</span></button>
+            <button id="levelTab1" onclick="selectLevel(1)" class="btn-3d bg-amber-400 text-white font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#d97706] text-xs sm:text-sm">★ レベル①<br><span class="text-[10px] opacity-90">きほん・かんたん</span></button>
+            <button id="levelTab2" onclick="selectLevel(2)" class="btn-3d bg-white border-2 border-slate-300 text-slate-600 font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#cbd5e1] text-xs sm:text-sm">★★ レベル②<br><span class="text-[10px] opacity-90">ひろがる・くりあがり</span></button>
+            <button id="levelTab3" onclick="selectLevel(3)" class="btn-3d bg-white border-2 border-slate-300 text-slate-600 font-black py-2.5 px-2 rounded-2xl shadow-[0_4px_0_#cbd5e1] text-xs sm:text-sm">★★★ レベル③<br><span class="text-[10px] opacity-90">1ふん・ちょうせん</span></button>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 flex-1">
+            <!-- ① じかんのよみとり -->
             <div onclick="startStage('yomitori')" class="btn-3d bg-orange-50 hover:bg-orange-100/80 border-4 border-orange-300 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer shadow-[0_4px_0_#fdba74]">
               <div class="flex items-center justify-between"><span class="text-xs font-black bg-orange-400 text-white px-2 py-0.5 rounded-full">ステージ 1</span><span class="text-3xl">⏰</span></div>
               <div class="my-2"><h3 class="text-base sm:text-lg font-black text-orange-600">じかんの よみとり</h3><p class="text-xs text-slate-500 font-bold">とけいを みて なんじなんぷんか こたえよう！</p></div>
               <div class="text-right text-xs font-black text-orange-500">あそぶ ➔</div>
             </div>
 
+            <!-- ② はりあわせ -->
             <div onclick="startStage('hariawase')" class="btn-3d bg-sky-50 hover:bg-sky-100/80 border-4 border-sky-300 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer shadow-[0_4px_0_#7dd3fc]">
               <div class="flex items-center justify-between"><span class="text-xs font-black bg-sky-400 text-white px-2 py-0.5 rounded-full">ステージ 2</span><span class="text-3xl">🎯</span></div>
               <div class="my-2"><h3 class="text-base sm:text-lg font-black text-sky-600">はりあわせ</h3><p class="text-xs text-slate-500 font-bold">もくひょうの じかんに はりを まわそう！</p></div>
               <div class="text-right text-xs font-black text-sky-500">あそぶ ➔</div>
             </div>
 
-            <div onclick="alert('ステージ3・4・5は今後のアップデートで追加されます！')" class="btn-3d bg-indigo-50/50 border-4 border-dashed border-indigo-200 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer">
-              <div class="flex items-center justify-between"><span class="text-xs font-black bg-indigo-300 text-white px-2 py-0.5 rounded-full">ステージ 3</span><span class="text-3xl">☀️🌙</span></div>
-              <div class="my-2"><h3 class="text-base sm:text-lg font-black text-indigo-400">ごぜん・ごご</h3><p class="text-xs text-slate-400 font-bold">24じかんの いいかたを まなぼう！</p></div>
-              <div class="text-right text-xs font-bold text-slate-400">じゅんびちゅう</div>
+            <!-- ③ ごぜん・ごご -->
+            <div onclick="startStage('gozen_gogo')" class="btn-3d bg-indigo-50 hover:bg-indigo-100/80 border-4 border-indigo-300 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer shadow-[0_4px_0_#a5b4fc]">
+              <div class="flex items-center justify-between"><span class="text-xs font-black bg-indigo-500 text-white px-2 py-0.5 rounded-full">ステージ 3</span><span class="text-3xl">☀️🌙</span></div>
+              <div class="my-2"><h3 class="text-base sm:text-lg font-black text-indigo-600">ごぜん・ごご</h3><p class="text-xs text-slate-500 font-bold">せいかつの じかんや 24じかんの いいかた！</p></div>
+              <div class="text-right text-xs font-black text-indigo-500">あそぶ ➔</div>
             </div>
 
-            <div onclick="alert('ステージ3・4・5は今後のアップデートで追加されます！')" class="btn-3d bg-emerald-50/50 border-4 border-dashed border-emerald-200 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer">
-              <div class="flex items-center justify-between"><span class="text-xs font-black bg-emerald-300 text-white px-2 py-0.5 rounded-full">ステージ 4</span><span class="text-3xl">⏳</span></div>
-              <div class="my-2"><h3 class="text-base sm:text-lg font-black text-emerald-400">○ふんまえ・○ふんご</h3><p class="text-xs text-slate-400 font-bold">じかんを すすめたり もどしたり！</p></div>
-              <div class="text-right text-xs font-bold text-slate-400">じゅんびちゅう</div>
+            <!-- ④ ○ふんまえ・○ふんご -->
+            <div onclick="startStage('mae_ato')" class="btn-3d bg-emerald-50 hover:bg-emerald-100/80 border-4 border-emerald-300 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer shadow-[0_4px_0_#6ee7b7]">
+              <div class="flex items-center justify-between"><span class="text-xs font-black bg-emerald-500 text-white px-2 py-0.5 rounded-full">ステージ 4</span><span class="text-3xl">⏳</span></div>
+              <div class="my-2"><h3 class="text-base sm:text-lg font-black text-emerald-600">○ふんまえ・○ふんご</h3><p class="text-xs text-slate-500 font-bold">じかんを すすめたり もどしたり けいさん！</p></div>
+              <div class="text-right text-xs font-black text-emerald-500">あそぶ ➔</div>
             </div>
 
-            <div onclick="alert('ステージ3・4・5は今後のアップデートで追加されます！')" class="sm:col-span-2 btn-3d bg-rose-50/50 border-4 border-dashed border-rose-200 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer">
-              <div class="flex items-center justify-between"><span class="text-xs font-black bg-rose-300 text-white px-2 py-0.5 rounded-full">ステージ 5</span><span class="text-3xl">🕒➔🕔</span></div>
-              <div class="my-1"><h3 class="text-base sm:text-lg font-black text-rose-400">なんぷんかん？</h3><p class="text-xs text-slate-400 font-bold">2つの とけいから たった じかんを もとめよう！</p></div>
-              <div class="text-right text-xs font-bold text-slate-400">じゅんびちゅう</div>
+            <!-- ⑤ なんぷんかん？ -->
+            <div onclick="startStage('nanpunkan')" class="sm:col-span-2 btn-3d bg-rose-50 hover:bg-rose-100/80 border-4 border-rose-300 rounded-2xl p-3.5 flex flex-col justify-between cursor-pointer shadow-[0_4px_0_#fda4af]">
+              <div class="flex items-center justify-between"><span class="text-xs font-black bg-rose-500 text-white px-2 py-0.5 rounded-full">ステージ 5</span><span class="text-3xl">🕒➔🕔</span></div>
+              <div class="my-1"><h3 class="text-base sm:text-lg font-black text-rose-600">なんぷんかん？</h3><p class="text-xs text-slate-500 font-bold">2つの とけいから たった じかんの ながさを こたえよう！</p></div>
+              <div class="text-right text-xs font-black text-rose-500">あそぶ ➔</div>
             </div>
           </div>
         </div>
@@ -150,14 +155,35 @@
       </header>
 
       <div class="flex-1 p-3 sm:p-5 relative flex flex-col justify-center">
-        <!-- テンキーモード -->
+
+        <!-- -------------------------------------------- -->
+        <!-- [UIパターンA] テンキー入力モード (1, 3, 4, 5共通) -->
+        <!-- -------------------------------------------- -->
         <div id="modeKeypad" class="grid grid-cols-1 md:grid-cols-12 gap-5 w-full">
+          
+          <!-- 左側: 時計表示エリア (7/12) -->
           <div class="md:col-span-7 bg-[#fbf8e4] rounded-2xl border-4 border-amber-200 p-4 flex flex-col items-center justify-between shadow-inner">
             <div class="w-full flex items-center gap-3 mb-2">
               <div id="playKeypadPartner" class="w-12 h-12 bg-white rounded-full border-2 border-amber-200 flex items-center justify-center text-2xl egg-animate flex-shrink-0">🥚</div>
-              <div class="bg-white border-2 border-amber-300 px-3 py-1.5 rounded-xl text-slate-700 font-black text-xs sm:text-sm shadow-sm flex-1">なんじ かな？ すうじを おして こたえよう！</div>
+              <div class="bg-white border-2 border-amber-300 px-3 py-1.5 rounded-xl text-slate-700 font-black text-xs sm:text-sm shadow-sm flex-1">
+                <span id="keypadPromptText">なんじ かな？ すうじを おして こたえよう！</span>
+              </div>
             </div>
-            <div class="w-full max-w-[280px] sm:max-w-[310px] aspect-square flex items-center justify-center">
+
+            <!-- ステージ3用: 生活場面バッジ -->
+            <div id="sceneBadge" class="hidden bg-white border-2 border-indigo-300 rounded-xl px-4 py-1.5 mb-2 text-indigo-700 font-black text-sm flex items-center gap-2 shadow-sm">
+              <span id="sceneIcon" class="text-xl">☀️</span>
+              <span id="sceneText">あさごはんの じかん</span>
+            </div>
+
+            <!-- ステージ4用: ○分前・○分後バッジ -->
+            <div id="maeAtoBadge" class="hidden rounded-2xl px-5 py-2 mb-2 font-black text-base flex items-center gap-2 shadow-md">
+              <span id="maeAtoIcon" class="text-2xl">⏩</span>
+              <span id="maeAtoText">いまから【20ふん ご】は？</span>
+            </div>
+
+            <!-- 時計表示コンテナ（通常1台、またはステージ5の2台） -->
+            <div id="singleClockContainer" class="w-full max-w-[270px] aspect-square flex items-center justify-center">
               <svg id="yomitoriClockSvg" viewBox="0 0 400 400" class="w-full h-full drop-shadow-md">
                 <circle cx="200" cy="200" r="185" fill="#3b82f6" /><circle cx="200" cy="200" r="172" fill="#60a5fa" /><circle cx="200" cy="200" r="162" fill="#ffffff" />
                 <g id="yomitoriFaceGroup"></g>
@@ -167,21 +193,64 @@
                 <circle cx="200" cy="200" r="12" fill="#f59e0b" stroke="#ffffff" stroke-width="3" />
               </svg>
             </div>
+
+            <!-- ステージ5用: 2つの時計並列コンテナ -->
+            <div id="dualClockContainer" class="hidden w-full flex items-center justify-center gap-2 sm:gap-4 my-auto">
+              <div class="flex flex-col items-center">
+                <span class="text-xs font-black text-slate-500 mb-1 bg-amber-100 px-2 py-0.5 rounded-full">はじめ</span>
+                <div class="w-28 sm:w-36 aspect-square">
+                  <svg id="clockStartSvg" viewBox="0 0 400 400" class="w-full h-full drop-shadow">
+                    <circle cx="200" cy="200" r="185" fill="#3b82f6" /><circle cx="200" cy="200" r="165" fill="#ffffff" />
+                    <g id="clockStartFace"></g><g id="clockStartHour"></g><g id="clockStartMin"></g>
+                    <circle cx="200" cy="200" r="12" fill="#f59e0b" />
+                  </svg>
+                </div>
+                <span id="clockStartTimeText" class="text-xs font-black text-slate-600 mt-1">--:--</span>
+              </div>
+
+              <span class="text-2xl sm:text-3xl font-black text-rose-500 animate-pulse">➔</span>
+
+              <div class="flex flex-col items-center">
+                <span class="text-xs font-black text-slate-500 mb-1 bg-rose-100 px-2 py-0.5 rounded-full">おわり</span>
+                <div class="w-28 sm:w-36 aspect-square">
+                  <svg id="clockEndSvg" viewBox="0 0 400 400" class="w-full h-full drop-shadow">
+                    <circle cx="200" cy="200" r="185" fill="#ef4444" /><circle cx="200" cy="200" r="165" fill="#ffffff" />
+                    <g id="clockEndFace"></g><g id="clockEndHour"></g><g id="clockEndMin"></g>
+                    <circle cx="200" cy="200" r="12" fill="#f59e0b" />
+                  </svg>
+                </div>
+                <span id="clockEndTimeText" class="text-xs font-black text-slate-600 mt-1">--:--</span>
+              </div>
+            </div>
+
           </div>
 
+          <!-- 右側: ディスプレイ ＆ テンキー (5/12) -->
           <div class="md:col-span-5 flex flex-col justify-between gap-3 bg-white rounded-2xl border-4 border-amber-200 p-4 shadow-sm">
+            
+            <!-- 入力スロット群 -->
             <div class="flex items-center justify-center gap-2 bg-amber-50 p-2.5 rounded-2xl border-2 border-amber-200">
+              
+              <!-- 時間スロット（ステージ5のレベル1・2以外で表示） -->
               <div id="slotHour" onclick="setActiveSlot('hour')" class="flex-1 bg-white border-4 border-rose-400 rounded-xl py-2 text-center cursor-pointer transition shadow-sm bg-rose-50/50">
-                <span class="text-xs font-black text-slate-400 block">なんじ</span>
+                <span id="slotHourLabel" class="text-xs font-black text-slate-400 block">なんじ</span>
                 <span id="displayHour" class="text-3xl font-black text-rose-500">?</span>
-                <span class="text-xs font-extrabold text-slate-600">じ</span>
+                <span id="slotHourUnit" class="text-xs font-extrabold text-slate-600">じ</span>
               </div>
-              <span class="text-2xl font-black text-slate-400">:</span>
+
+              <span id="slotColon" class="text-2xl font-black text-slate-400">:</span>
+
+              <!-- 分スロット -->
               <div id="slotMinute" onclick="setActiveSlot('minute')" class="flex-1 bg-white border-4 border-slate-200 rounded-xl py-2 text-center cursor-pointer transition shadow-sm">
-                <span class="text-xs font-black text-slate-400 block">なんぷん</span>
+                <span id="slotMinuteLabel" class="text-xs font-black text-slate-400 block">なんぷん</span>
                 <span id="displayMinute" class="text-3xl font-black text-sky-500">?</span>
-                <span class="text-xs font-extrabold text-slate-600">ふん</span>
+                <span id="slotMinuteUnit" class="text-xs font-extrabold text-slate-600">ふん</span>
               </div>
+            </div>
+
+            <!-- 計算ヒント表示枠 -->
+            <div id="calcHintBox" class="hidden bg-indigo-50 border-2 border-indigo-200 rounded-xl p-2 text-center text-xs font-black text-indigo-600">
+              <!-- JSで動的にヒントを挿入 -->
             </div>
 
             <div class="grid grid-cols-3 gap-2 flex-1">
@@ -203,7 +272,9 @@
           </div>
         </div>
 
-        <!-- ドラッグモード -->
+        <!-- -------------------------------------------- -->
+        <!-- [UIパターンB] はりあわせモード (ステージ2専用)  -->
+        <!-- -------------------------------------------- -->
         <div id="modeDrag" class="hidden grid grid-cols-1 md:grid-cols-12 gap-5 w-full">
           <div class="md:col-span-5 flex flex-col justify-between gap-4">
             <div class="bg-white rounded-2xl border-4 border-amber-200 p-4 shadow-sm flex flex-col items-center justify-center">
@@ -242,12 +313,53 @@
             </div>
           </div>
         </div>
+
+        <!-- -------------------------------------------- -->
+        <!-- [UIパターンC] 2択選択モード (ステージ3 レベル①) -->
+        <!-- -------------------------------------------- -->
+        <div id="modeBinaryChoice" class="hidden grid grid-cols-1 md:grid-cols-12 gap-5 w-full">
+          <div class="md:col-span-7 bg-[#fbf8e4] rounded-2xl border-4 border-amber-200 p-4 flex flex-col items-center justify-between shadow-inner">
+            <div class="w-full flex items-center gap-3 mb-2">
+              <div id="playBinaryPartner" class="w-12 h-12 bg-white rounded-full border-2 border-amber-200 flex items-center justify-center text-2xl egg-animate flex-shrink-0">🥚</div>
+              <div class="bg-white border-2 border-indigo-300 px-3 py-1.5 rounded-xl text-indigo-900 font-black text-xs sm:text-sm shadow-sm flex-1">
+                このばめんは「ごぜん」？「ごご」？ えらぼう！
+              </div>
+            </div>
+
+            <div class="bg-white border-3 border-indigo-300 rounded-2xl px-5 py-2 mb-2 text-slate-700 font-black text-base flex items-center gap-3 shadow-md">
+              <span id="binarySceneIcon" class="text-3xl">☀️</span>
+              <div>
+                <span id="binarySceneTime" class="text-indigo-600 text-xs block font-extrabold">7:00</span>
+                <span id="binarySceneTitle">あさごはんを たべる じかん</span>
+              </div>
+            </div>
+
+            <div class="w-full max-w-[250px] aspect-square flex items-center justify-center">
+              <svg id="binaryClockSvg" viewBox="0 0 400 400" class="w-full h-full drop-shadow-md">
+                <circle cx="200" cy="200" r="185" fill="#3b82f6" /><circle cx="200" cy="200" r="172" fill="#60a5fa" /><circle cx="200" cy="200" r="162" fill="#ffffff" />
+                <g id="binaryFaceGroup"></g>
+                <g id="binaryHourHand"></g>
+                <g id="binaryMinuteHand"></g>
+                <circle cx="200" cy="200" r="12" fill="#f59e0b" stroke="#ffffff" stroke-width="3" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 flex flex-col justify-center gap-4 bg-white rounded-2xl border-4 border-amber-200 p-6 shadow-sm">
+            <h3 class="text-center font-black text-slate-600 text-base mb-1">どちらか えらんでね！</h3>
+            <button onclick="submitBinaryChoice('ごぜん')" class="btn-3d bg-amber-400 hover:bg-amber-500 text-white font-black py-6 rounded-3xl shadow-[0_6px_0_#d97706] text-2xl flex items-center justify-center gap-3">
+              <span class="text-4xl">☀️</span> ごぜん
+            </button>
+            <button onclick="submitBinaryChoice('ごご')" class="btn-3d bg-indigo-500 hover:bg-indigo-600 text-white font-black py-6 rounded-3xl shadow-[0_6px_0_#4338ca] text-2xl flex items-center justify-center gap-3">
+              <span class="text-4xl">🌙</span> ごご
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- ============================================== -->
-    <!-- [画面3] 図鑑モーダル画面                        -->
-    <!-- ============================================== -->
+    <!-- [画面3] 図鑑モーダル画面 -->
     <div id="zukanModal" class="hidden absolute inset-0 bg-[#fffef0] flex flex-col p-4 sm:p-6 z-50 overflow-y-auto">
       <header class="flex items-center justify-between pb-3 border-b-4 border-amber-200 mb-4">
         <div class="flex items-center gap-2"><span class="text-3xl">📖</span><h2 class="text-2xl font-black text-amber-500">キャラクターずかん</h2></div>
@@ -268,7 +380,8 @@
         <span class="text-3xl font-black text-rose-600 mt-2">せいかい！💮</span>
       </div>
       <div id="wrongIcon" class="hidden flex flex-col items-center animate-bounce">
-        <span class="text-6xl">🤔</span><span class="text-xl font-black text-amber-600 mt-2">もうすこし！ヒントをみてみよう</span>
+        <span class="text-6xl">🤔</span>
+        <span class="text-xl font-black text-amber-600 mt-2">もうすこし！ヒントをみてみよう</span>
       </div>
     </div>
 
@@ -378,9 +491,13 @@
     }
     function closeZukan() { document.getElementById('zukanModal').classList.add('hidden'); }
 
-    /* ---------------- 時計描画 ---------------- */
+    /* ---------------- 時計盤面の描画ユーティリティ ---------------- */
     function populateClock(fId, hId) {
-      const fg = document.getElementById(fId), hg = document.getElementById(hId);
+      const fg = document.getElementById(fId), hg = hId ? document.getElementById(hId) : null;
+      if (!fg) return;
+      fg.innerHTML = '';
+      if (hg) hg.innerHTML = '';
+
       for (let i = 0; i < 60; i++) {
         const rad = i * 6 * Math.PI / 180, isH = (i % 5 === 0);
         const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -400,19 +517,34 @@
         t.setAttribute('fill', '#1e293b'); t.setAttribute('text-anchor', 'middle');
         t.textContent = n; fg.appendChild(t);
       }
-      for (let m = 0; m < 60; m += 5) {
-        const rad = m * 6 * Math.PI / 180, t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        t.setAttribute('x', 200 + 175 * Math.sin(rad));
-        t.setAttribute('y', 200 - 175 * Math.cos(rad) + 4);
-        t.setAttribute('font-size', '11'); t.setAttribute('font-weight', '800');
-        t.setAttribute('fill', '#0284c7'); t.setAttribute('text-anchor', 'middle');
-        t.textContent = m.toString().padStart(2, '0'); hg.appendChild(t);
+      if (hg) {
+        for (let m = 0; m < 60; m += 5) {
+          const rad = m * 6 * Math.PI / 180, t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          t.setAttribute('x', 200 + 175 * Math.sin(rad));
+          t.setAttribute('y', 200 - 175 * Math.cos(rad) + 4);
+          t.setAttribute('font-size', '11'); t.setAttribute('font-weight', '800');
+          t.setAttribute('fill', '#0284c7'); t.setAttribute('text-anchor', 'middle');
+          t.textContent = m.toString().padStart(2, '0'); hg.appendChild(t);
+        }
       }
     }
+
     populateClock('yomitoriFaceGroup', 'yomitoriHintGroup');
     populateClock('dragFaceGroup', 'dragHintGroup');
+    populateClock('binaryFaceGroup', null);
+    populateClock('clockStartFace', null);
+    populateClock('clockEndFace', null);
 
-    /* ---------------- ゲームループ ---------------- */
+    function setHands(mHandId, hHandId, h, m) {
+      const mh = document.getElementById(mHandId), hh = document.getElementById(hHandId);
+      if (!mh || !hh) return;
+      mh.innerHTML = '<rect x="194" y="45" width="12" height="165" rx="6" fill="#0284c7" /><polygon points="190,52 200,32 210,52" fill="#0284c7" />';
+      mh.setAttribute('transform', `rotate(${m * 6}, 200, 200)`);
+      hh.innerHTML = '<rect x="193" y="95" width="14" height="115" rx="7" fill="#ef4444" />';
+      hh.setAttribute('transform', `rotate(${(h % 12) * 30 + m * 0.5}, 200, 200)`);
+    }
+
+    /* ---------------- ゲームループ ＆ 多様性問題生成 ---------------- */
     let currentLevel = 1, currentStage = 'yomitori', currentQuestionIndex = 0, questions = [], mistakes = 0;
 
     function selectLevel(lvl) {
@@ -432,13 +564,138 @@
       updateHomeStatus();
     }
 
+    // ステージ3用: 豊富な生活シーン集
+    const SCENES_LIST = [
+      { text: 'あさ ごはんを たべる じかん', period: 'ごぜん', icon: '☀️', h12: 7, m: 0 },
+      { text: 'がっこうに とうこうする じかん', period: 'ごぜん', icon: '🎒', h12: 8, m: 15 },
+      { text: 'あさの かいを はじめる じかん', period: 'ごぜん', icon: '🏫', h12: 8, m: 30 },
+      { text: '2じかんめの じゅぎょうの じかん', period: 'ごぜん', icon: '📖', h12: 9, m: 45 },
+      { text: 'おいしい きゅうしょくの じかん', period: 'ごぜん', icon: '🍱', h12: 11, m: 45 },
+      { text: 'ひるやすみに そとであそぶ じかん', period: 'ごご', icon: '⚽', h12: 1, m: 0 },
+      { text: 'みんなで そうじをする じかん', period: 'ごご', icon: '🧹', h12: 1, m: 45 },
+      { text: 'がっこうから おうちに かえる じかん', period: 'ごご', icon: '🏠', h12: 3, m: 0 },
+      { text: 'おやつを たのしく たべる じかん', period: 'ごご', icon: '🍩', h12: 3, m: 30 },
+      { text: 'こうえんで なかよく あそぶ じかん', period: 'ごご', icon: '🛝', h12: 4, m: 15 },
+      { text: 'しゅくだいを がんばる じかん', period: 'ごご', icon: '✏️', h12: 5, m: 0 },
+      { text: 'おふろに はいって さっぱりする じかん', period: 'ごご', icon: '🛁', h12: 6, m: 30 },
+      { text: 'かぞくで ばんごはんを たべる じかん', period: 'ごご', icon: '🍛', h12: 7, m: 15 },
+      { text: 'はみがきをして ねる じゅんびの じかん', period: 'ごご', icon: '🪥', h12: 8, m: 45 },
+      { text: 'おふとんで ぐっすり ねる じかん', period: 'ごご', icon: '🌙', h12: 9, m: 30 },
+      { text: 'みんなが ねしずまった よるなかの じかん', period: 'ごぜん', icon: '🌌', h12: 1, m: 0 }
+    ];
+
     function startStage(stage) {
       currentStage = stage; currentQuestionIndex = 0; mistakes = 0;
       questions = [];
+      const usedKeys = new Set();
+
       while (questions.length < 5) {
-        let h = Math.floor(Math.random() * 12) + 1;
-        let m = currentLevel === 1 ? (Math.random() < 0.5 ? 0 : 30) : (currentLevel === 2 ? Math.floor(Math.random() * 12) * 5 : Math.floor(Math.random() * 60));
-        questions.push({ hour: h, minute: m });
+        let q = null;
+        let key = '';
+
+        if (stage === 'yomitori' || stage === 'hariawase') {
+          let h = Math.floor(Math.random() * 12) + 1;
+          let m = 0;
+          if (currentLevel === 1) m = Math.random() < 0.5 ? 0 : 30;
+          else if (currentLevel === 2) m = [5, 10, 15, 20, 25, 35, 40, 45, 50, 55][Math.floor(Math.random() * 10)];
+          else {
+            // レベル3: 1分刻み（繰り上がり直前の難問なども頻出）
+            m = Math.floor(Math.random() * 60);
+          }
+          key = `${h}:${m}`;
+          q = { hour: h, minute: m };
+
+        } else if (stage === 'gozen_gogo') {
+          if (currentLevel === 1) {
+            const sc = SCENES_LIST[Math.floor(Math.random() * SCENES_LIST.length)];
+            key = sc.text;
+            q = { sceneText: sc.text, period: sc.period, icon: sc.icon, hour12: sc.h12, minute: sc.m };
+          } else {
+            const isPM = (Math.random() > 0.35);
+            const h12 = Math.floor(Math.random() * 11) + 1;
+            let m = 0;
+            if (currentLevel === 2) m = [0, 15, 30, 45][Math.floor(Math.random() * 4)];
+            else m = Math.floor(Math.random() * 12) * 5;
+
+            const period = isPM ? 'ごご' : 'ごぜん';
+            const h24 = isPM ? h12 + 12 : h12;
+            key = `${period}_${h12}:${m}`;
+            q = { period, hour12: h12, minute: m, hour24: h24, icon: isPM ? '🌙' : '☀️' };
+          }
+
+        } else if (stage === 'mae_ato') {
+          let baseH = Math.floor(Math.random() * 12) + 1;
+          let baseM = 0, delta = 0;
+
+          if (currentLevel === 1) {
+            // 繰り上がりなし
+            const isAfter = Math.random() < 0.5;
+            if (isAfter) {
+              baseM = [0, 10, 20][Math.floor(Math.random() * 3)];
+              delta = [10, 20, 30][Math.floor(Math.random() * 3)];
+            } else {
+              baseM = [30, 40, 50][Math.floor(Math.random() * 3)];
+              delta = -1 * [10, 20, 30][Math.floor(Math.random() * 3)];
+            }
+          } else if (currentLevel === 2) {
+            // 繰り上がり・繰り下がりあり
+            const isAfter = Math.random() < 0.5;
+            if (isAfter) {
+              baseM = [35, 40, 45, 50, 55][Math.floor(Math.random() * 5)];
+              delta = [15, 20, 25, 30, 40][Math.floor(Math.random() * 5)];
+            } else {
+              baseM = [5, 10, 15, 20, 25][Math.floor(Math.random() * 5)];
+              delta = -1 * [15, 20, 25, 30, 40][Math.floor(Math.random() * 5)];
+            }
+          } else {
+            // レベル3: 任意の分数加減算
+            baseM = Math.floor(Math.random() * 60);
+            const deltas = [-35, -25, -18, -12, 14, 22, 35, 48];
+            delta = deltas[Math.floor(Math.random() * deltas.length)];
+          }
+
+          let totalM = baseH * 60 + baseM + delta;
+          while (totalM < 0) totalM += 12 * 60;
+          let ansH = Math.floor(totalM / 60) % 12;
+          if (ansH === 0) ansH = 12;
+          let ansM = totalM % 60;
+
+          key = `${baseH}:${baseM}_${delta}`;
+          q = { baseH, baseM, delta, ansH, ansM };
+
+        } else if (stage === 'nanpunkan') {
+          let sH = Math.floor(Math.random() * 11) + 1;
+          let sM = 0, duration = 0;
+
+          if (currentLevel === 1) {
+            // 1時間以内・同時間内
+            sM = [0, 5, 10, 15, 20][Math.floor(Math.random() * 5)];
+            duration = [10, 15, 20, 25, 30, 35][Math.floor(Math.random() * 6)];
+          } else if (currentLevel === 2) {
+            // 1時間以内・時間をまたぐ
+            sM = [35, 40, 45, 50, 55][Math.floor(Math.random() * 5)];
+            duration = [15, 20, 25, 30, 35, 40, 45][Math.floor(Math.random() * 7)];
+          } else {
+            // レベル3: 1時間以上の計算（○時間○分）
+            sM = [0, 15, 30, 45][Math.floor(Math.random() * 4)];
+            duration = [65, 75, 80, 90, 105, 120][Math.floor(Math.random() * 6)];
+          }
+
+          let endTotal = sH * 60 + sM + duration;
+          let eH = Math.floor(endTotal / 60) % 12 || 12;
+          let eM = endTotal % 60;
+
+          let durH = Math.floor(duration / 60);
+          let durM = duration % 60;
+
+          key = `${sH}:${sM}_to_${eH}:${eM}`;
+          q = { sH, sM, eH, eM, duration, durH, durM };
+        }
+
+        if (!usedKeys.has(key)) {
+          usedKeys.add(key);
+          questions.push(q);
+        }
       }
 
       document.getElementById('viewHome').classList.add('hidden');
@@ -447,14 +704,24 @@
       const partner = (CHARACTER_DATABASE[loadState().partnerId] || {}).icon || '🥚';
       document.getElementById('playKeypadPartner').textContent = partner;
       document.getElementById('playDragPartner').textContent = partner;
+      document.getElementById('playBinaryPartner').textContent = partner;
+
+      // モード切り替え制御
+      document.getElementById('modeDrag').classList.add('hidden');
+      document.getElementById('modeKeypad').classList.add('hidden');
+      document.getElementById('modeBinaryChoice').classList.add('hidden');
+      document.getElementById('sceneBadge').classList.add('hidden');
+      document.getElementById('maeAtoBadge').classList.add('hidden');
+      document.getElementById('calcHintBox').classList.add('hidden');
 
       if (stage === 'hariawase') {
         document.getElementById('modeDrag').classList.remove('hidden');
-        document.getElementById('modeKeypad').classList.add('hidden');
+      } else if (stage === 'gozen_gogo' && currentLevel === 1) {
+        document.getElementById('modeBinaryChoice').classList.remove('hidden');
       } else {
         document.getElementById('modeKeypad').classList.remove('hidden');
-        document.getElementById('modeDrag').classList.add('hidden');
       }
+
       loadQuestion();
     }
 
@@ -479,18 +746,97 @@
     function loadQuestion() {
       const q = questions[currentQuestionIndex];
       renderProgress();
+
+      // UI表示の初期化
+      document.getElementById('singleClockContainer').classList.remove('hidden');
+      document.getElementById('dualClockContainer').classList.add('hidden');
+      document.getElementById('sceneBadge').classList.add('hidden');
+      document.getElementById('maeAtoBadge').classList.add('hidden');
+      document.getElementById('calcHintBox').classList.add('hidden');
+
+      // スロット初期設定
+      document.getElementById('slotHour').classList.remove('hidden');
+      document.getElementById('slotColon').classList.remove('hidden');
+      document.getElementById('slotHourLabel').textContent = 'なんじ';
+      document.getElementById('slotHourUnit').textContent = 'じ';
+      document.getElementById('slotMinuteLabel').textContent = 'なんぷん';
+      document.getElementById('slotMinuteUnit').textContent = 'ふん';
+
       if (currentStage === 'hariawase') {
         document.getElementById('dragTargetHour').textContent = q.hour;
         document.getElementById('dragTargetMinute').textContent = q.minute.toString().padStart(2, '0');
         setDragPosition((q.hour + 4) % 12 || 12, 0);
-      } else {
-        const mh = document.getElementById('yomitoriMinuteHand'), hh = document.getElementById('yomitoriHourHand');
-        mh.innerHTML = '<rect x="194" y="45" width="12" height="165" rx="6" fill="#0284c7" /><polygon points="190,52 200,32 210,52" fill="#0284c7" />';
-        mh.setAttribute('transform', `rotate(${q.minute * 6}, 200, 200)`);
-        hh.innerHTML = '<rect x="193" y="95" width="14" height="115" rx="7" fill="#ef4444" />';
-        hh.setAttribute('transform', `rotate(${(q.hour % 12) * 30 + q.minute * 0.5}, 200, 200)`);
+
+      } else if (currentStage === 'yomitori') {
+        document.getElementById('keypadPromptText').textContent = 'なんじ かな？ すうじを おして こたえよう！';
+        setHands('yomitoriMinuteHand', 'yomitoriHourHand', q.hour, q.minute);
+        resetKeypad();
+
+      } else if (currentStage === 'gozen_gogo' && currentLevel === 1) {
+        document.getElementById('binarySceneIcon').textContent = q.icon;
+        document.getElementById('binarySceneTime').textContent = `${q.hour12}:${q.minute.toString().padStart(2, '0')}`;
+        document.getElementById('binarySceneTitle').textContent = q.sceneText;
+        setHands('binaryMinuteHand', 'binaryHourHand', q.hour12, q.minute);
+
+      } else if (currentStage === 'gozen_gogo') {
+        document.getElementById('sceneBadge').classList.remove('hidden');
+        document.getElementById('calcHintBox').classList.remove('hidden');
+        document.getElementById('sceneIcon').textContent = q.icon;
+        document.getElementById('sceneText').textContent = `【${q.period} ${q.hour12}じ ${q.minute}ふん】を 24じかんに！`;
+        document.getElementById('keypadPromptText').textContent = '24じかんの いいかたで こたえよう！';
+        document.getElementById('calcHintBox').innerHTML = '💡 ごごの じかんは <span class="text-rose-500 font-black">+ 12</span> して かぞえよう！';
+        setHands('yomitoriMinuteHand', 'yomitoriHourHand', q.hour12, q.minute);
+        resetKeypad();
+
+      } else if (currentStage === 'mae_ato') {
+        document.getElementById('maeAtoBadge').classList.remove('hidden');
+        const isAfter = q.delta > 0;
+        const dAbs = Math.abs(q.delta);
+        const b = document.getElementById('maeAtoBadge');
+
+        b.className = isAfter
+          ? 'bg-emerald-100 border-2 border-emerald-400 text-emerald-800 rounded-2xl px-5 py-2 mb-2 font-black text-sm flex items-center gap-2 shadow-sm'
+          : 'bg-orange-100 border-2 border-orange-400 text-orange-800 rounded-2xl px-5 py-2 mb-2 font-black text-sm flex items-center gap-2 shadow-sm';
+
+        document.getElementById('maeAtoIcon').textContent = isAfter ? '⏩' : '⏪';
+        document.getElementById('maeAtoText').textContent = `いまから【${dAbs}ふん ${isAfter ? 'ご' : 'まえ'}】は なんじ？`;
+        document.getElementById('keypadPromptText').textContent = `とけいから【${dAbs}ふん ${isAfter ? 'ご' : 'まえ'}】の じかんを こたえよう！`;
+        setHands('yomitoriMinuteHand', 'yomitoriHourHand', q.baseH, q.baseM);
+        resetKeypad();
+
+      } else if (currentStage === 'nanpunkan') {
+        document.getElementById('singleClockContainer').classList.add('hidden');
+        document.getElementById('dualClockContainer').classList.remove('hidden');
+        document.getElementById('keypadPromptText').textContent = '2つの とけいから たった じかんを こたえよう！';
+
+        // 2台の時計を描画
+        setHands('clockStartMin', 'clockStartHour', q.sH, q.sM);
+        setHands('clockEndMin', 'clockEndHour', q.eH, q.eM);
+        document.getElementById('clockStartTimeText').textContent = `${q.sH}:${q.sM.toString().padStart(2, '0')}`;
+        document.getElementById('clockEndTimeText').textContent = `${q.eH}:${q.eM.toString().padStart(2, '0')}`;
+
+        if (currentLevel < 3) {
+          // レベル1・2: 「○○分間」のみ入力
+          document.getElementById('slotHour').classList.add('hidden');
+          document.getElementById('slotColon').classList.add('hidden');
+          document.getElementById('slotMinuteLabel').textContent = 'たった じかん';
+          document.getElementById('slotMinuteUnit').textContent = 'ふんかん';
+          setActiveSlot('minute');
+        } else {
+          // レベル3: 「○時間○分」
+          document.getElementById('slotHourLabel').textContent = 'なんじかん';
+          document.getElementById('slotHourUnit').textContent = 'じかん';
+          document.getElementById('slotMinuteLabel').textContent = 'なんぷん';
+          document.getElementById('slotMinuteUnit').textContent = 'ふん';
+        }
         resetKeypad();
       }
+    }
+
+    /* ---------------- 2択判定 (ステージ3 レベル①) ---------------- */
+    function submitBinaryChoice(choice) {
+      const q = questions[currentQuestionIndex];
+      handleFeedback(choice === q.period);
     }
 
     /* ---------------- テンキー操作 ---------------- */
@@ -504,7 +850,7 @@
       playKeypad();
       if (activeSlot === 'hour') {
         if (inHour.length < 2) inHour += d;
-        if (inHour.length === 2 || parseInt(inHour) > 1) setActiveSlot('minute');
+        if (inHour.length === 2 || (currentStage !== 'gozen_gogo' && parseInt(inHour) > 1)) setActiveSlot('minute');
       } else {
         if (inMinute.length < 2) inMinute += d;
       }
@@ -514,12 +860,20 @@
     function clearCurrentSlot() {
       playKeypad();
       if (activeSlot === 'hour') inHour = '';
-      else { if (inMinute === '') { setActiveSlot('hour'); inHour = ''; } else inMinute = ''; }
+      else {
+        if (inMinute === '' && currentStage !== 'nanpunkan') { setActiveSlot('hour'); inHour = ''; }
+        else inMinute = '';
+      }
       document.getElementById('displayHour').textContent = inHour || '?';
       document.getElementById('displayMinute').textContent = inMinute || '?';
     }
     function resetKeypad() {
-      inHour = ''; inMinute = ''; setActiveSlot('hour');
+      inHour = ''; inMinute = '';
+      if (currentStage === 'nanpunkan' && currentLevel < 3) {
+        setActiveSlot('minute');
+      } else {
+        setActiveSlot('hour');
+      }
       document.getElementById('displayHour').textContent = '?';
       document.getElementById('displayMinute').textContent = '?';
       keypadHint = false;
@@ -529,12 +883,28 @@
       keypadHint = !keypadHint;
       document.getElementById('yomitoriHintGroup').className = keypadHint ? 'transition-opacity duration-300 opacity-100' : 'transition-opacity duration-300 opacity-0';
     }
+
     function submitKeypadAnswer() {
       const q = questions[currentQuestionIndex];
-      handleFeedback(parseInt(inHour) === q.hour && parseInt(inMinute) === q.minute);
+      let isCorrect = false;
+
+      if (currentStage === 'yomitori') {
+        isCorrect = (parseInt(inHour) === q.hour && parseInt(inMinute) === q.minute);
+      } else if (currentStage === 'gozen_gogo') {
+        isCorrect = (parseInt(inHour) === q.hour24 && parseInt(inMinute) === q.minute);
+      } else if (currentStage === 'mae_ato') {
+        isCorrect = (parseInt(inHour) === q.ansH && parseInt(inMinute) === q.ansM);
+      } else if (currentStage === 'nanpunkan') {
+        if (currentLevel < 3) {
+          isCorrect = (parseInt(inMinute) === q.duration);
+        } else {
+          isCorrect = (parseInt(inHour || '0') === q.durH && parseInt(inMinute || '0') === q.durM);
+        }
+      }
+      handleFeedback(isCorrect);
     }
 
-    /* ---------------- ドラッグ操作 ---------------- */
+    /* ---------------- ドラッグ操作 (ステージ2) ---------------- */
     let curDragH = 12, curDragM = 0, isDragging = false, dragHint = false;
     function setDragPosition(h, m) {
       curDragH = h; curDragM = m;
@@ -668,7 +1038,7 @@
       `;
     }
 
-    // 初期化
+    // 初回起動処理
     updateHomeStatus();
   </script>
 </body>
